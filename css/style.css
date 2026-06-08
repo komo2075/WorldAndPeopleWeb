@@ -1,0 +1,762 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  position: relative;
+  padding: 28px;
+}
+
+.main-page {
+  background: #1200e8;
+  color: #ff2aa3;
+}
+
+.people-page {
+  background: #030306;
+  color: white;
+}
+
+.world-page {
+  background: #ff2aa3;
+  color: #1529ff;
+}
+
+.site-title {
+  position: fixed;
+  top: 18px;
+  left: 20px;
+  z-index: 100;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: rgba(255,255,255,.75);
+  color: #111;
+  padding: 6px 10px;
+}
+
+.nav {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+}
+
+.nav a {
+  text-decoration: none;
+  background: rgba(255,255,255,.75);
+  color: #111;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  background: #111;
+  color: white;
+}
+
+.instruction {
+  position: fixed;
+  bottom: 18px;
+  left: 20px;
+  z-index: 100;
+  max-width: 360px;
+  background: rgba(255,255,255,.78);
+  color: #111;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.collage-stage {
+  position: relative;
+  width: min(100%, 1100px);
+  height: 720px;
+  margin: 70px auto 20px;
+  border: 1px solid rgba(255,255,255,.2);
+  overflow: hidden;
+}
+
+.collage-img {
+  position: absolute;
+  display: block;
+}
+
+.cutout {
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+}
+
+.cutout:hover {
+  transform: scale(1.25) rotate(7deg);
+  filter: drop-shadow(0 0 18px white);
+  z-index: 80;
+}
+
+.eye-button:hover {
+  filter: drop-shadow(0 0 22px #ff2aa3) brightness(1.35);
+  z-index: 80;
+}
+
+.flower-button:hover {
+  transform: scale(1.35) rotate(-10deg);
+  filter: drop-shadow(0 0 20px #ff2aa3);
+  z-index: 80;
+}
+
+.label {
+  position: absolute;
+  font-size: 14px;
+  background: rgba(255,255,255,.75);
+  color: #111;
+  padding: 5px 8px;
+  transform: rotate(-4deg);
+}
+
+.big-text {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: clamp(44px, 8vw, 95px);
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-shadow: 8px 8px rgba(0,0,0,.2);
+  z-index: 6;
+}
+
+.vertical-text {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  writing-mode: vertical-rl;
+  letter-spacing: 6px;
+  color: rgba(0,0,0,.45);
+  font-size: 13px;
+  z-index: 7;
+}
+
+.return-link {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  text-decoration: none;
+  background: rgba(255,255,255,.8);
+  color: #111;
+  padding: 12px 16px;
+  border: 2px solid #111;
+  z-index: 90;
+}
+
+.return-link:hover {
+  background: #111;
+  color: white;
+}
+
+/* main page */
+.map-main {
+  width: 520px;
+  left: 7%;
+  top: 12%;
+  opacity: 0.42;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.paper-main-01 {
+  width: 300px;
+  left: 12%;
+  top: 15%;
+  transform: rotate(-9deg);
+  z-index: 2;
+}
+
+.paper-main-02 {
+  width: 260px;
+  right: 10%;
+  top: 12%;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+.paper-main-03 {
+  width: 320px;
+  left: 42%;
+  top: 45%;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+
+.text-main-01 {
+  width: 190px;
+  left: 4%;
+  top: 58%;
+  transform: rotate(-12deg);
+  z-index: 5;
+}
+
+.text-main-02 {
+  width: 150px;
+  right: 28%;
+  top: 18%;
+  transform: rotate(9deg);
+  z-index: 5;
+}
+
+.text-main-03 {
+  width: 180px;
+  right: 12%;
+  bottom: 24%;
+  transform: rotate(-5deg);
+  z-index: 5;
+}
+
+.text-main-04 {
+  width: 190px;
+  left: 45%;
+  bottom: 8%;
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+.eye-main-01 {
+  width: 170px;
+  left: 18%;
+  top: 21%;
+  transform: rotate(-4deg);
+  z-index: 8;
+}
+
+.eye-main-02 {
+  width: 160px;
+  left: 47%;
+  top: 15%;
+  transform: rotate(5deg);
+  z-index: 8;
+}
+
+.eye-main-03 {
+  width: 150px;
+  right: 16%;
+  top: 24%;
+  transform: rotate(-9deg);
+  z-index: 8;
+}
+
+.eye-main-04 {
+  width: 150px;
+  left: 28%;
+  bottom: 22%;
+  transform: rotate(10deg);
+  z-index: 8;
+}
+
+.eye-main-05 {
+  width: 140px;
+  right: 30%;
+  bottom: 17%;
+  transform: rotate(-4deg);
+  z-index: 8;
+}
+
+.flower-main-01 {
+  width: 190px;
+  left: 14%;
+  bottom: 11%;
+  transform: rotate(8deg);
+  z-index: 9;
+}
+
+.flower-main-02 {
+  width: 180px;
+  right: 18%;
+  bottom: 30%;
+  transform: rotate(-12deg);
+  z-index: 9;
+}
+
+.flower-main-03 {
+  width: 170px;
+  left: 51%;
+  bottom: 23%;
+  transform: rotate(15deg);
+  z-index: 9;
+}
+
+.main-door {
+  width: 92px;
+  right: 13%;
+  bottom: 9%;
+  z-index: 11;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.main-door:hover {
+  transform: scale(1.25) rotate(3deg);
+  filter: drop-shadow(0 0 20px #ffffff);
+}
+
+.label-main-01 {
+  left: 15%;
+  top: 11%;
+  z-index: 30;
+}
+
+.label-main-02 {
+  right: 10%;
+  bottom: 22%;
+  z-index: 30;
+}
+
+.label-main-03 {
+  left: 45%;
+  top: 13%;
+  z-index: 30;
+}
+
+/* people page */
+.people-face-01 {
+  width: 330px;
+  left: 3%;
+  top: 9%;
+  opacity: 0.7;
+  transform: rotate(-8deg);
+  z-index: 1;
+}
+
+.people-face-02 {
+  width: 260px;
+  right: 5%;
+  top: 12%;
+  opacity: 0.55;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+.people-paper-01 {
+  width: 300px;
+  left: 32%;
+  top: 10%;
+  opacity: 0.5;
+  transform: rotate(4deg);
+  z-index: 2;
+}
+
+.people-text-01 {
+  width: 150px;
+  left: 18%;
+  bottom: 19%;
+  transform: rotate(-12deg);
+  z-index: 5;
+}
+
+.people-text-02 {
+  width: 190px;
+  right: 17%;
+  bottom: 18%;
+  transform: rotate(8deg);
+  z-index: 5;
+}
+
+.people-door {
+  width: 130px;
+  left: 18%;
+  top: 31%;
+  z-index: 9;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.people-door:hover {
+  transform: scale(1.18) rotate(-3deg);
+  filter: drop-shadow(0 0 28px #1529ff);
+}
+
+.people-person {
+  width: 95px;
+  left: 46%;
+  top: 38%;
+  z-index: 12;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.people-person:hover {
+  transform: translateX(70px) scale(1.15);
+  filter: drop-shadow(0 0 22px white);
+}
+
+.people-eye-01 {
+  width: 150px;
+  right: 20%;
+  top: 22%;
+  z-index: 8;
+}
+
+.people-eye-02 {
+  width: 150px;
+  right: 32%;
+  top: 42%;
+  z-index: 8;
+}
+
+.people-flower-01 {
+  width: 190px;
+  left: 43%;
+  bottom: 10%;
+  z-index: 10;
+}
+
+.people-flower-02 {
+  width: 220px;
+  left: 53%;
+  bottom: 8%;
+  z-index: 11;
+}
+
+.people-flower-03 {
+  width: 190px;
+  right: 12%;
+  bottom: 10%;
+  z-index: 10;
+}
+
+.people-label-01 {
+  left: 13%;
+  top: 20%;
+  z-index: 30;
+}
+
+.people-label-02 {
+  left: 42%;
+  top: 31%;
+  z-index: 30;
+}
+
+.people-label-03 {
+  right: 9%;
+  bottom: 18%;
+  z-index: 30;
+}
+
+/* world page */
+.world-map-01 {
+  width: 520px;
+  left: 7%;
+  top: 10%;
+  opacity: 0.35;
+  transform: rotate(-7deg);
+  z-index: 1;
+}
+
+.world-paper-01 {
+  width: 310px;
+  right: 12%;
+  top: 13%;
+  opacity: 0.55;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+.world-face-01 {
+  width: 230px;
+  left: 6%;
+  bottom: 12%;
+  opacity: 0.75;
+  transform: rotate(-10deg);
+  z-index: 5;
+}
+
+.world-face-02 {
+  width: 260px;
+  right: 7%;
+  top: 17%;
+  opacity: 0.65;
+  transform: rotate(12deg);
+  z-index: 5;
+}
+
+.world-flower-01 {
+  width: 160px;
+  left: 20%;
+  top: 12%;
+  z-index: 10;
+}
+
+.world-flower-02 {
+  width: 210px;
+  left: 38%;
+  top: 36%;
+  z-index: 10;
+}
+
+.world-flower-03 {
+  width: 180px;
+  right: 20%;
+  bottom: 18%;
+  z-index: 10;
+}
+
+.world-flower-04 {
+  width: 150px;
+  right: 36%;
+  top: 16%;
+  z-index: 10;
+}
+
+.world-mouth-01 {
+  width: 170px;
+  left: 13%;
+  bottom: 20%;
+  z-index: 12;
+}
+
+.world-mouth-02 {
+  width: 170px;
+  right: 11%;
+  bottom: 36%;
+  z-index: 12;
+}
+
+.world-ear-01 {
+  width: 110px;
+  left: 52%;
+  top: 12%;
+  z-index: 12;
+}
+
+.world-ear-02 {
+  width: 110px;
+  right: 30%;
+  bottom: 12%;
+  z-index: 12;
+}
+
+.world-hand-01 {
+  width: 120px;
+  right: 28%;
+  bottom: 26%;
+  z-index: 12;
+}
+
+.world-hand-02 {
+  width: 120px;
+  left: 32%;
+  bottom: 14%;
+  z-index: 12;
+}
+
+.world-label-01 {
+  left: 8%;
+  top: 8%;
+  z-index: 30;
+}
+
+.world-label-02 {
+  left: 44%;
+  bottom: 15%;
+  z-index: 30;
+}
+
+.petal {
+  position: absolute;
+  width: 48px;
+  pointer-events: none;
+  z-index: 25;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.petal-01 {
+  left: 12%;
+  animation-duration: 9s;
+  animation-delay: 0s;
+}
+
+.petal-02 {
+  left: 30%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+}
+
+.petal-03 {
+  left: 51%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.petal-04 {
+  left: 68%;
+  animation-duration: 12s;
+  animation-delay: 0.5s;
+}
+
+.petal-05 {
+  left: 82%;
+  animation-duration: 8s;
+  animation-delay: 1.5s;
+}
+
+@keyframes fall {
+  0% {
+    top: -80px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 760px;
+    transform: rotate(280deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .collage-stage {
+    height: 680px;
+  }
+
+  .nav {
+    top: auto;
+    bottom: 90px;
+    left: 20px;
+    right: auto;
+  }
+
+  .cutout {
+    width: 100px;
+  }
+}
+
+
+
+
+/* poem layer */
+.poem-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.poem-line {
+  position: absolute;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: rgba(1, 5, 80, 0.72);
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-family: Georgia, "Times New Roman", serif;
+  opacity: 0.82;
+  mix-blend-mode: multiply;
+  white-space: nowrap;
+}
+
+.poem-01 {
+  left: 2%;
+  top: -10%;
+  font-size: 18px;
+  opacity: 0.9;
+  transform: rotate(-3deg);
+}
+
+.poem-02 {
+  left: 10%;
+  top: 38%;
+  transform: rotate(4deg);
+}
+
+.poem-03 {
+  left: 18%;
+  top: 5%;
+  transform: rotate(-6deg);
+}
+
+.poem-04 {
+  left: 26%;
+  top: 50%;
+  transform: rotate(3deg);
+}
+
+.poem-05 {
+  left: 33%;
+  top: -4%;
+  transform: rotate(7deg);
+}
+
+.poem-06 {
+  left: 41%;
+  top: 28%;
+  transform: rotate(-4deg);
+}
+
+.poem-07 {
+  left: 48%;
+  top: -15%;
+  transform: rotate(2deg);
+}
+
+.poem-08 {
+  left: 56%;
+  top: 42%;
+  transform: rotate(-7deg);
+}
+
+.poem-09 {
+  left: 63%;
+  top: 10%;
+  transform: rotate(5deg);
+}
+
+.poem-10 {
+  left: 70%;
+  top: 58%;
+  transform: rotate(-3deg);
+}
+
+.poem-11 {
+  left: 78%;
+  top: -8%;
+  transform: rotate(6deg);
+}
+
+.poem-12 {
+  left: 85%;
+  top: 32%;
+  transform: rotate(-4deg);
+}
+
+.poem-13 {
+  left: 92%;
+  top: 5%;
+  transform: rotate(4deg);
+}
+
+.poem-14 {
+  left: -4%;
+  top: 48%;
+  transform: rotate(-5deg);
+}
+
+.poem-15 {
+  left: 36%;
+  top: 72%;
+  transform: rotate(5deg);
+}
+
+.poem-16 {
+  left: 96%;
+  top: 62%;
+  transform: rotate(-6deg);
+}
